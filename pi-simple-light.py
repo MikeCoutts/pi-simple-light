@@ -8,8 +8,12 @@ import time # for sleep functions
 from signal import signal, SIGINT # for Cntrl-C
 from sys import exit
 
-# define the GPIO ports for the Green LED
-green = 26
+# Initialize the  GPIO Infrastructure to BCM (Broadcom SOC channel)
+GPIO.setmode(GPIO.BCM)
+
+# Define the Green LED GPIO port as an output
+GREEN = 26
+GPIO.setup(GREEN, GPIO.OUT) 
 
 # Define an exit handler for the program (called on Cntrl-C)
 def CntrlCHandler(signal_received, frame):
@@ -18,25 +22,19 @@ def CntrlCHandler(signal_received, frame):
     GPIO.cleanup()
     exit(0)
 
-# setup  the Cntrl-C handler
+# setup the Cntrl-C handler
 signal(SIGINT, CntrlCHandler)
 
-# Initialize the  GPIO Infrastructure to BCM (Broadcom SOC channel)
-GPIO.setmode(GPIO.BCM)
-
-# Setup the Green GPIO Output Pin
-GPIO.setup(green, GPIO.OUT) 
-
-# infinate loop for the main thread (Use Cntrl-C to exit)
+# infinite loop for the main thread (Use Cntrl-C to exit)
 while True:
   # Turn the Green LED On
-  GPIO.output(green, GPIO.HIGH)
+  GPIO.output(GREEN, GPIO.HIGH)
 
   # Sleep for 2 Seconds
   time.sleep(2)
 
   # Turn off the Green LED
-  GPIO.output(green, GPIO.LOW)
+  GPIO.output(GREEN, GPIO.LOW)
 
   # Sleep for 2 Seconds
   time.sleep(2)
