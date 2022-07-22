@@ -3,7 +3,7 @@ A Simple Raspberry PI Python program to show the use of a GPIO Output pin to con
 
 Simple infinite loop causing an LED to "Flash" on GPIO Pin 26
 
-![Alt text](https://github.com/MikeCoutts/pi-simple-switch/blob/main/images/IMG_20211103_225959778.jpg?raw=true "Traffic Lights")
+![Alt text](https://github.com/MikeCoutts/pi-simple-switch/blob/main/images/STEM-101-BreadBoard.jpg?raw=true "Simple Light")
 
 # Simple Raspberry Pi Bread Board wiring for this project
 [Buzzer](https://www.amazon.com/dp/B07S85WRSZ?psc=1&ref=ppx_yo2_dt_b_product_details) ground on 5V GND line with +ve into GPIO 23.
